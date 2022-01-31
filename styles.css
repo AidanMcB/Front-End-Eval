@@ -1,0 +1,44 @@
+.main-page{
+    display: grid;
+    grid-template-rows: 120px 800px;
+}
+
+/* Search */
+.search-form{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+}
+.search-form > div {
+    display: flex;
+    justify-content: center;
+}
+
+/* Card */
+.artwork-table{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16px;
+}
+.artwork-card{
+    border: 1px solid black;
+    box-shadow: 4px 3px 4px rgba(0,0,0,0.8);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 400px; width: 280px;
+}
+.card-title{
+    font-weight: 700;
+}
+.card-img{
+    width: 250px; 
+    height: 250px;
+    padding: 0 6px 0 6px;
+}
+.card-artist, .card-department{
+    margin: 0;
+}
