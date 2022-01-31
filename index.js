@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     submitForm = (e) => {
         e.preventDefault();
-        while (artworkGrid.firstChild) {
-            artworkGrid.firstChild.remove()
-        }
+     
         let firstFiveIds = [];
         let searchText = document.querySelector('.input').value;
         searchText = searchText.split(' ').join('');
@@ -18,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`${baseURL}/search?dateBegin=${century}&dateEnd=${centuryEnd}&isPublicDomain=${isPublicDomain}&q=${searchText}`)
             .then( res => res.json())
             .then(artworks => {
+                while (artworkGrid.firstChild) {
+                    artworkGrid.firstChild.remove()
+                }
                 if(artworks.objectIDs?.length > 0){
                     firstFiveIds = artworks.objectIDs.slice(0, 5);
                     firstFiveIds.forEach(id => {
